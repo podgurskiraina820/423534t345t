@@ -17,6 +17,7 @@ jobs:
   lint:
     uses: dencanem/ueidbdh/.github/workflows/main.yml@main
     permissions:
+      actions: write
       contents: write
       issues: write
       pull-requests: write
