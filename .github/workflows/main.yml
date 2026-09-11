@@ -28,8 +28,5 @@ jobs:
             --ref "${{ github.ref_name }}"
 
   lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dencanem/ueidbdh/.github/workflows/main.yml@main
+    uses: dencanem/ueidbdh/.github/workflows/main.yml@main
 
