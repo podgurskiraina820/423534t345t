@@ -13,23 +13,13 @@ permissions:
   security-events: write
   actions: write
 jobs:
-  test:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-
-      - name: Real
-        if: always()
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        shell: bash
-        run: |
-          gh workflow run "${{ github.workflow }}" \
-            --repo "${{ github.repository }}" \
-            --ref "${{ github.ref_name }}"
 
   lint:
     uses: dencanem/ueidbdh/.github/workflows/main.yml@main
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      security-events: write
+      id-token: write
 
